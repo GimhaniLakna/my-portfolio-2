@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title> My Portfolio</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+   
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+            box-sizing: border-box;
+
+        }
+
+        body{
+            background: black;
+            color: white;
+
+        }
+
+        /*.first-image{*/
+        /*    margin-left: 20px;*/
+        /*    border-radius: 8px;*/
+        /*    height: 500px;width:45%;*/
+        /*    animation: image 0.8s  linear ;transition-duration: 2s;*/
+        /*    animation-direction: alternate;margin-left: 8vw;*/
+
+        /*}*/
+
+        nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        h1{
+            font-size: 40px;
+        }
+        h1 span{
+            color: purple;
+        }
+
+        nav > ul > li{
+            display: inline-block;
+            list-style: none;
+            margin: 10px 20px;
+        }
+
+        nav > ul > li > a{
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+            position: relative;
+        }
+
+        nav > ul > li > a::after{
+            content: '';
+            width: 0;
+            height: 3px;
+            background: mediumpurple;
+            position: absolute;
+            left: 0;
+            bottom: -6px;
+            transition: 0.5s;
+        }
+
+        nav > ul > li > a:hover::after{
+            width: 100%;
+        }
+
+        .header-text{
+            margin-top: 20%;
+            font-size: 20px;
+        }
+        .header-text h1{
+            font-size: 60px;
+            margin-top: 20px;
+        }
+
+        .header-text h1 span{
+            color: purple;
+        }
+
+        .header-text p{
+            font-size: 19px;
+        }
+
+
+        #about{
+            padding: 80px 0;
+            color: white;
+        }
+
+        .row{
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .about-col-1{
+            flex-basis: 35%;
+        }
+
+        .about-col-1 img{
+            width: 100%;
+            height: 600px;
+            border-radius: 15px;
+        }
+
+        .about-col-2{
+            flex-basis: 60%;
+        }
+
+        .sub-title{
+            font-size:40px ;
+            font-weight: 600;
+            color: purple;
+
+        }
+
+        .myself{
+            font-size: 12px;
+        }
+
+        .a-myself{
+            color: purple;
+            font-style: italic;
+        }
+
+        .mydetail-1{
+            display: inline;
+            margin: 20px 0 40px;
+            font-size: 13px;
+        }
+
+        .mydetail-2{
+            display: inline;
+            margin: 20px 0 40px;
+            font-size: 13px;
+        }
+
+        .mydetail-3{
+            display: inline;
+            margin: 20px 0 40px;
+            font-size: 13px;
+        }
+
+        .detail{
+            color: purple;
+        }
+
+        .skill{
+            display: inline-block;
+            margin: 30px 0 50px;
+        }
+
+        .range{
+            color: purple;
+        }
+
+        .btn.btn2{
+            display: inline-block;
+            background: purple;
+        }
+
+        #services{
+            padding: 30px 0;
+        }
+
+        .services-list{
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+            grid-gap: 40px;
+            margin-top: 50px;
+        }
+
+        .services-list div{
+            background:grey;
+            padding: 40px;
+            font-size: 13px;
+            font-weight: 300;
+            border-radius: 10px;
+        }
+
+        .services-list > div:hover{
+            background: purple;
+            transform: translateY(-10px);
+
+        }
+
+        .services-list div img{
+            font-size: 100px;
+            margin-bottom: 30px;
+
+        }
+
+        .education{
+            color: white;
+
+        }
+
+        .year{
+            color: #151515;
+        }
+
+        #portfolio{
+            padding: 50px 0;
+        }
+
+        .work-list{
+            display: grid;
+            grid-template-columns:repeat(auto-fit, minmax(250px,1fr));
+            grid-gap: 40px;
+            margin-top: 50px;
+        }
+
+        .work{
+            border-radius: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .work img{
+            width: 100%;
+            border-radius: 10px;
+            display: block;
+        }
+
+        #assignment{
+            padding: 30px 0;
+        }
+
+        .assignment-list{
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 40px;
+            margin-top: 50px;
+        }
+
+        .assignment-list > div{
+            background: grey;
+            padding: 40px;
+            font-size: 13px;
+            font-weight: 300;
+            border-radius: 10px;
+            transition: background 0.5s;
+
+        }
+
+        .assignment-list > div > img{
+            border-radius: 10px;
+        }
+
+        .assignment-list >div >h2{
+            font-size: 30px;
+            font-weight: 500;
+            margin-bottom: 15px;
+        }
+        .assignment-list > div:hover{
+            background: purple;
+            transform: translateY(-10px);
+
+        }
+
+        .contact-left{
+            flex-basis: 35%;
+        }
+
+        /*.contact-right{*/
+        /*    flex-basis: 60%;*/
+        /*}*/
+
+        .contact-left p{
+            margin-top: 30px;
+        }
+
+        .social-img{
+            margin-top: 30px;
+        }
+
+        .contact-right > form{
+            width: 100%;
+        }
+
+        form input,form textarea{
+            width: 100%;
+            border: 0;
+            outline: none;
+            background: plum;
+            padding: 15px;
+            margin: 15px 0;
+            color: white;
+            font-size: 18px;
+            border-radius: 6px;
+        }
+
+
+
+    </style>
+</head>
+<body>
+<div id="header">
+    <div class="container">
+    <nav>
+        <h1><span>GiM</span>hAnI</h1>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Education</a></li>
+            <li><a href="#">Project</a></li>
+            <li><a href="#">Assignment</a></li>
+            <li><a href="#">Contact</a></li>
+
+        </ul>
+    </nav>
+
+
+        <div class="header-text">
+            <p>Well come to my profile <br> I'm UI/UX Designer</p>
+            <h1>My Name is <span> Gimhani Lakna</span></h1>
+
+            <p>I am currently studying software engineering.<br>
+                I hope to become a software engineer<br>
+                with good experience and knowledge in the future.</p>
+
+<!--            <img src="assets/images/WhatsApp%20Image%202024-01-25%20at%206.12.59%20PM.jpeg" class="first-image">-->
+
+            <!--Social media link-->
+
+            <br><br>
+            <img src="assets/images/facebook-icon-960x1024-removebg-preview-removebg-preview.png" title="facebook" width="30">&nbsp;
+            <img src="assets/images/image%205.png" title="in" width="35">&nbsp;
+            <img src="assets/images/image%204.png" title="inster" width="35">&nbsp;
+            <img href="https://github.com/GimhaniLakna" src="assets/images/image%203.png" title="git" width="35">&nbsp;
+            <img src="assets/images/image%202.png" title="whatsp" width="35">&nbsp;
+
+
+        </div>
+
+</div>
+</div>
+
+
+<div id="about">
+    <div class="container">
+        <div class="row">
+
+            <div class="about-col-1">
+                <h1 class="sub-title">About Me</h1>
+                <img src="assets/images/WhatsApp%20Image%202024-01-25%20at%206.11.38%20PM.jpeg">
+            </div>
+            <div class="about-col-2">
+
+                <br>
+                <br><br><br>
+                <!--main topic-->
+                <div class= "about-m">
+                    <h2><i>It's My Pleasure To Introduce<br><span class="a-myself">About Myself</span></i></h2>
+                </div>
+
+                <br>
+                <!--my self-->
+                <div class="myself">
+                    <p>I’m Gimhani Lakna,<br>
+                        Currently I am doing my higher study about Software Engineering.<br>
+                        I have completed the software engineering certificate course at NIBM.<br>
+                        Also i have knowledge about web application design,UI/Ux design,<br>
+                        javaFX, C++. my future vision is be a skill full Software Engineer<br>
+                        after my higher studying.</p>
+
+                    <br>
+
+                </div>
+                <!--my details-->
+
+                <div>
+                <div class="mydetail-1">
+                    <a>Name :<span class="detail">Gimhani Lakna</span> </a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a>Birthday : <span class="detail">2000/04/02</span></a><br><br>
+                </div>
+
+                    <div class="mydetail-2">
+                    <a>Age : <span class="detail">24</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a>Study : <span class="detail">IJSE</span></a><br><br>
+                    </div>
+
+                        <div class="mydetail-3">
+                    <a>City : <span class="detail">Rathnapura</span></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <a>Gender : <span class="detail">Female</span></a><br><br>
+
+                </div>
+
+                    <a href="" class="btn btn2"> Download CV</a>
+                    <a href="" class="btn btn2"> Heir Me</a>
+
+                    <br><br>
+
+                </div>
+                <!--skills-->
+                <!-- Range Picker -->
+
+                <div>
+
+                    <div class="skill">
+                        <a>Javafx</a><br>
+                        <input class="range" type="range" value="80"><br>
+
+                        <a>Mysql</a><br>
+                        <input class="range"  type="range" value="90"><br>
+                    </div>
+
+
+                    <div class="skill">
+                        <a>java</a><br>
+                        <input class="range"  type="range" value="80"><br>
+
+                        <a>HTML</a><br>
+                        <input class="range"  type="range" value="80"><br>
+                    </div>
+
+
+                    <div class="skill">
+                        <a>C++</a><br>
+                        <input class="range"  type="range" value="50"><br>
+
+                        <a>css</a><br>
+                        <input class="range"  type="range" value="80"><br>
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<div id="services">
+    <div class="container">
+        <h1 class="sub-title"> Education</h1>
+        <div class="services-list">
+            <div>
+                <img src="assets/images/OIP%20(1).jpg" title="school" width="50">
+                <h2 class="year">2016 - 2019</h2><br>
+                <h3><p class="education">My school name is R/vidyaloka central<br>
+                    collage I studied in this college from 6th<br>
+                    grade to 13th grade the turning point of<br>
+                    my life is my school</p></h3>
+            </div>
+
+            <div>
+                <img src="assets/images/OIP%20(3).jpg" title="russian" width="50">
+                <h2 class="year">2017 - 2019</h2><br>
+                <h3><p class="education">I have studied Russian language<br>
+                    in Russian club Sri Lanka and I  am a<br>
+                    member of Russian language institute.</p></h3>
+
+            </div>
+
+            <div>
+                <img src="assets/images/OIP%20(4).jpg" title="BWEA" width="50">
+                <h2 class="year">2019 - 2020</h2><br>
+                <h3><p class="education">I have studied a certificate course in<br>
+                    English language studies at British Way<br>
+                    English academy.</p></h3>
+            </div>
+
+            <div>
+                <img src="assets/images/OIP%20(2).jpg" title="NIBM" width="50">
+                <h2 class="year">2022 - 2023</h2><br>
+                <h3><p class="education">I completed the 6 months software<br>
+                    engineering certificate course at NIBM<br>
+                    and learned c++ there</p></h3>
+            </div>
+
+            <div>
+                <img src="assets/images/OIP%20(5).jpg" title="IJSE" width="50">
+                <h2 class="year">2023....</h2><br>
+                <h3><p class="education">I am studying in Institute of software<br>
+                    engineering. I believe that this institute<br>
+                    is the best thing I have chosen in my life.<br>
+                    This institute will be the turning point of<br>
+                    my life.</p></h3>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div id="portfolio">
+    <div class="container">
+        <h1 class="sub-title"> Project</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="assets/images/animal-clinik.jpg" width="20" height="480">
+            </div>
+            <div class="work">
+                <img src="assets/images/Rectangle%2037.png" width="20" height="500">
+            </div>
+            <div class="work">
+                <img src="assets/images/Rectangle%2039.png" width="20" height="500">
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="assignment">
+    <div class="container">
+        <h1 class="sub-title">Assignment</h1>
+        <div class="assignment-list">
+            <div>
+                <img src="assets/images/web-development.jpg">
+                <b><h2 class="year">Web Development</h2><br></b>
+                <p><b>Web development refers to the creating, building, and maintaining of websites. It
+                    includes aspects such as web design, web publishing, web programming, and database management. It is the
+                    creation of an application works over</b></p>
+                <a href="#">learn more</a>
+            </div>
+
+            <div>
+                <img src="assets/images/application.jpg">
+                <b><h2 class="year">Application Development</h2></b><br>
+                <p><b>Application development is the process of creating a computer program or a set of programs
+                    to perform the different tasks that a business requires. From calculating monthly
+                    expenses to scheduling sales reports, applications help businesses automate processes and increase efficiency.</b></p>
+                <a href="#">learn more</a>
+            </div>
+
+            <div>
+                <img src="assets/images/python.jpg">
+                <b><h2 class="year">Python Development</h2></b><br>
+                <p><b>These projects prove how much you can achieve with CSS3 without
+                    using JavaScript and images. (some of them are better than graphic designs!) Open source.</b></p>
+                <a href="#">learn more</a>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+
+<div id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="contact-left">
+                <h1 class="sub-title">Contact Me</h1>
+            <div class="contact-right">
+                <form>
+                    <input type="text" name="Name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="Message" rows="6" placeholder="Your Message"></textarea>
+                    <button type="submit" class="btn btn2">Submit</button>
+                </form>
+            </div>
+
+                <p>gimhani00lakna@gmail.com</p>
+                <p>0701965822</p>
+                <div class="social-img">
+                    <img src="assets/images/facebook-icon-960x1024-removebg-preview-removebg-preview.png" title="facebook" width="30">&nbsp;
+                    <img src="assets/images/image%205.png" title="in" width="35">&nbsp;
+                    <img src="assets/images/image%204.png" title="inster" width="35">&nbsp;
+                    <img href="https://github.com/GimhaniLakna" src="assets/images/image%203.png" title="git" width="35">&nbsp;
+                    <img src="assets/images/image%202.png" title="whatsp" width="35">&nbsp;
+
+                </div>
+        </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
